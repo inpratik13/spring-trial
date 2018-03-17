@@ -40,6 +40,16 @@
 	<!-- external properties -->
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="locations" value="classpath:com/example/springtrial/properties/external.properties" />
+		<property name="locations">
+			<array>
+				<value>classpath:com/example/springtrial/properties/external.properties
+				</value>
+			</array>
+		</property>
+		<!-- Aforementioned configuration also checks for system environment properties 
+			if matching property placeholder not found in any of above properties files. 
+			This can be disabled by setting following property.
+			
+			<property name="systemPropertiesMode" value="0"/> -->
 	</bean>
 </beans>

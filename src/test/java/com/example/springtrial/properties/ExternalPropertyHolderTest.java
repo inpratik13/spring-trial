@@ -16,6 +16,7 @@ public class ExternalPropertyHolderTest {
 
 	@Test
 	public void testPropertiesSet() {
+		Assert.assertNotNull(bean.getPath());
 		Assert.assertEquals("test_name", bean.getName());
 	}
 }

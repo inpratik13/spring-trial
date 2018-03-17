@@ -8,11 +8,21 @@ import org.springframework.stereotype.Component;
 public class ExternalPropertyHolder {
 
 	private final String name;
+	// You can also access system environment variables
+	private @Value("${PATH}") String path;
 
 	@Autowired
 	public ExternalPropertyHolder(@Value("${external.property.name}") String name) {
 		super();
 		this.name = name;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
 	}
 
 	public String getName() {
