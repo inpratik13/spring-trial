@@ -18,13 +18,19 @@
 		<lookup-method name="getSimpleBean" bean="simpleBeanAlias" />
 	</bean>
 
+	<bean id="bactoryMethodSampleBean" class="com.example.springtrial.simple.FactoryMethodSampleBean"
+		factory-method="getInstance" />
+
+	<bean id="factoryGeneratedObject" class="com.example.springtrial.simple.FactoryGeneratedObject"
+		factory-bean="factoryObject" factory-method="generateFactoryGeneratedObject" />
+
 	<!-- custom scope -->
 	<bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
 		<property name="scopes">
 			<map>
 				<entry key="timely">
 					<bean class="com.example.springtrial.custom.scope.TimelyScope">
-						<constructor-arg value="5000"/>
+						<constructor-arg value="5000" />
 					</bean>
 				</entry>
 			</map>
