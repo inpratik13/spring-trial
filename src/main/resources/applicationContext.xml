@@ -36,4 +36,10 @@
 			</map>
 		</property>
 	</bean>
+
+	<!-- external properties -->
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="classpath:com/example/springtrial/properties/external.properties" />
+	</bean>
 </beans>

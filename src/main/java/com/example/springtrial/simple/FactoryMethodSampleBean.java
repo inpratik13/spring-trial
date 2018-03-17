@@ -1,8 +1,5 @@
 package com.example.springtrial.simple;
 
-import org.springframework.context.annotation.Configuration;
-
-@Configuration
 public class FactoryMethodSampleBean {
 	private final double id;
 
