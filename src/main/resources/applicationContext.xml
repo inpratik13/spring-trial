@@ -48,8 +48,17 @@
 		</property>
 		<!-- Aforementioned configuration also checks for system environment properties 
 			if matching property placeholder not found in any of above properties files. 
-			This can be disabled by setting following property.
-			
-			<property name="systemPropertiesMode" value="0"/> -->
+			This can be disabled by setting following property. <property name="systemPropertiesMode" 
+			value="0"/> -->
+	</bean>
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyOverrideConfigurer">
+		<property name="locations">
+			<array>
+				<value>classpath:com/example/springtrial/properties/external_auto_set.properties
+				</value>
+			</array>
+		</property>
 	</bean>
 </beans>

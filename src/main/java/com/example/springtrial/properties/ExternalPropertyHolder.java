@@ -10,6 +10,10 @@ public class ExternalPropertyHolder {
 	private final String name;
 	// You can also access system environment variables
 	private @Value("${PATH}") String path;
+	// This property will be set automatically, without any annotation, As
+	// PropertyOverrideConfigurer is defined in context file, it will detect
+	// properties from external_auto_set and set them on this bean
+	private String autoSet;
 
 	@Autowired
 	public ExternalPropertyHolder(@Value("${external.property.name}") String name) {
@@ -27,6 +31,14 @@ public class ExternalPropertyHolder {
 
 	public String getName() {
 		return name;
+	}
+
+	public String getAutoSet() {
+		return autoSet;
+	}
+
+	public void setAutoSet(String autoSet) {
+		this.autoSet = autoSet;
 	}
 
 }

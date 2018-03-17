@@ -18,5 +18,6 @@ public class ExternalPropertyHolderTest {
 	public void testPropertiesSet() {
 		Assert.assertNotNull(bean.getPath());
 		Assert.assertEquals("test_name", bean.getName());
+		Assert.assertEquals("auto_set", bean.getAutoSet());
 	}
 }
