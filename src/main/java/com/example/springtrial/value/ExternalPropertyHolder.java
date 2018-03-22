@@ -1,4 +1,4 @@
-package com.example.springtrial.properties;
+package com.example.springtrial.value;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
