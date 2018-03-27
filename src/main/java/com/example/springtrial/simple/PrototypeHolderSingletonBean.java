@@ -1,6 +1,8 @@
 package com.example.springtrial.simple;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.inject.Inject;
+import javax.inject.Provider;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,10 +13,15 @@ public class PrototypeHolderSingletonBean {
 	 */
 	private final PrototypeBean bean;
 
-	@Autowired
-	public PrototypeHolderSingletonBean(PrototypeBean bean) {
+	/*
+	 * You can use @Inject or @Autowired on method, property or constructor to make Spring inject a bean.<br/>
+	 * But using @Inject you can inject Provider of Bean, which is useful when accessing bean of different type,<br/>
+	 * Or while you want to have Lazy access to the bean etc.
+	 */
+	@Inject
+	public PrototypeHolderSingletonBean(Provider<PrototypeBean> beanProvider) {
 		super();
-		this.bean = bean;
+		this.bean = beanProvider.get();
 	}
 
 	public double getPrototypeBeanId() {

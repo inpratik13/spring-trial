@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:applicationContextTest.xml")
 public class PrototypeHolderSingletonBeanTest {
-
+	
 	@Autowired
 	private PrototypeHolderSingletonBean bean;
 
